@@ -1,0 +1,8 @@
+# Ignore the form folder
+form/
+
+# Ignore all .zip files
+*.zip
+
+# Ignore all .php files
+*.php
