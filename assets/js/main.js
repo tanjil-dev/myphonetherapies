@@ -128,7 +128,7 @@
         this.nextElementSibling.classList.toggle("dropdown-active");
       }
     },
-    true
+    true,
   );
 
   /**
@@ -151,7 +151,7 @@
         scrollto(this.hash);
       }
     },
-    true
+    true,
   );
 
   /**
@@ -197,14 +197,14 @@
       mirror: false,
     });
   });
-  
-  document.addEventListener("DOMContentLoaded", function() {
-   // Select the .sideb_bar_menu div and clear its content
-   const sidebarMenu = document.querySelector('.sideb_bar_menu');
-   sidebarMenu.innerHTML = '';
 
-   // Define the HTML structure as a string
-   const menuHtml = `
+  document.addEventListener("DOMContentLoaded", function () {
+    // Select the .sideb_bar_menu div and clear its content
+    const sidebarMenu = document.querySelector(".sideb_bar_menu");
+    sidebarMenu.innerHTML = "";
+
+    // Define the HTML structure as a string
+    const menuHtml = `
       <ul>
          <li><a href="patient-registration.html">Register Now</a></li>
          <li><a href="return_patient.html">Return Patients</a></li>
@@ -238,6 +238,18 @@
          </li>
          <div class="collapse" id="location">
             <li class="m_mleft"><a href="delware.html">Delaware</a></li>
+         </div>
+         <div class="collapse" id="location">
+            <li class="m_mleft"><a href="minnesota.html">Minnesota</a></li>
+         </div>
+         <div class="collapse" id="location">
+            <li class="m_mleft"><a href="kentucky.html">Kentucky</a></li>
+         </div>
+         <div class="collapse" id="location">
+            <li class="m_mleft"><a href="north-dakota.html">North Dakota</a></li>
+         </div>
+         <div class="collapse" id="location">
+            <li class="m_mleft"><a href="oregon.html">Oregon</a></li>
          </div>
          <li class="side_menu_arrow">
             <a
@@ -290,27 +302,54 @@
             </a>
          </li>
          <div class="collapse" id="sm3">
-            <li class="side_menu_arrow">
-               <a
-                  class="collapsed"
-                  data-bs-toggle="collapse"
-                  href="#sub-dropdown2"
-                  role="button"
-                  aria-expanded="false"
-                  aria-controls="sub-dropdown2"
-                  >
-               Emotional
-               </a>
+    <li class="side_menu_arrow">
+        <a
+            class="collapsed"
+            data-bs-toggle="collapse"
+            href="#sub-dropdown2"
+            role="button"
+            aria-expanded="false"
+            aria-controls="sub-dropdown2"
+        >
+            Emotional
+        </a>
+    </li>
+
+    <div class="collapse" id="sub-dropdown2">
+        <li class="side_menu_arrow">
+            <a
+                class="collapsed"
+                data-bs-toggle="collapse"
+                href="#sub-dropdown-cognitive"
+                role="button"
+                aria-expanded="false"
+                aria-controls="sub-dropdown-cognitive"
+            >
+                Cognitive
+            </a>
+        </li>
+
+        <div class="collapse" id="sub-dropdown-cognitive">
+            <li class="m_mleft">
+                <a href="tbi-testing.html">TBI Testing</a>
             </li>
-            <div class="collapse" id="sub-dropdown2">
-               <li class="m_mleft">
-                  <a href="cog-rehab.html">Psychology Tests</a>
-               </li>
-               <li class="m_mleft">
-                  <a href="cog-rehab.html">Counseling</a>
-               </li>
-            </div>
-         </div>
+            <li class="m_mleft">
+                <a href="cog-rehab.html">Cognitive Rehabilitation</a>
+            </li>
+            <li class="m_mleft">
+                <a href="tbi-counseling.html">TBI Counseling</a>
+            </li>
+        </div>
+
+        <li class="m_mleft">
+            <a href="psychological-testing.html">Psychology Tests</a>
+        </li>
+        <li class="m_mleft">
+            <a href="counseling.html">Counseling</a>
+        </li>
+    </div>
+</div>
+
          <li class="side_menu_arrow">
             <a
                class="collapsed"
@@ -330,7 +369,12 @@
             <li class="m_mleft">
                <a href="depression.html">Depression</a>
             </li>
-            <li class="m_mleft"><a href="PTSD.html">PTSD</a></li>
+            <li class="m_mleft">
+              <a href="PTSD.html">PTSD</a>
+            </li>
+            <li class="m_mleft">
+               <a href="TBI.html">TBI</a>
+            </li>
          </div>
          
          <li>
@@ -339,25 +383,25 @@
       </ul>
    `;
 
-   // Insert the HTML structure into the .sideb_bar_menu div
-   sidebarMenu.innerHTML = menuHtml;
-});
+    // Insert the HTML structure into the .sideb_bar_menu div
+    sidebarMenu.innerHTML = menuHtml;
+  });
 
-// Select the `.footer-top` element
-const footerTop = document.querySelector('.footer-top');
+  // Select the `.footer-top` element
+  const footerTop = document.querySelector(".footer-top");
 
-// Ensure the `.footer-top` element exists
-if (footerTop) {
-  // Select the last `.row` inside `.footer-top`
-  const lastRow = footerTop.querySelector('.row:last-of-type');
-  
-  // If a last `.row` exists, remove it
-  if (lastRow) {
-    lastRow.remove();
-  }
+  // Ensure the `.footer-top` element exists
+  if (footerTop) {
+    // Select the last `.row` inside `.footer-top`
+    const lastRow = footerTop.querySelector(".row:last-of-type");
 
-  // Define the new row HTML structure
-  const newRowHTML = `
+    // If a last `.row` exists, remove it
+    if (lastRow) {
+      lastRow.remove();
+    }
+
+    // Define the new row HTML structure
+    const newRowHTML = `
     <div class="container">
         <div class="row">
           <div class="col-lg-4 col-md-4 col-6 footer-links roboto">
@@ -380,7 +424,7 @@ if (footerTop) {
               </li>
             </ul>
           </div>
-    
+
           <div class="col-lg-4 col-md-4 col-6 footer-links nunito">
             <ul>
               <li>
@@ -401,22 +445,19 @@ if (footerTop) {
     </div>
   `;
 
-  // Append the new row HTML to `.footer-top`
-  footerTop.insertAdjacentHTML('beforeend', newRowHTML);
-}
+    // Append the new row HTML to `.footer-top`
+    footerTop.insertAdjacentHTML("beforeend", newRowHTML);
+  }
 
+  // Create a new script element
+  const script = document.createElement("script");
 
-        // Create a new script element
-        const script = document.createElement('script');
-        
-        // Set the src attribute to the provided URL
-        script.src = "https://website-widgets.pages.dev/dist/sienna.min.js";
-        
-        // Set the defer attribute (optional but useful for scripts that load after HTML parsing)
-        script.defer = true;
-        
-        // Append the script to the document head
-        document.head.appendChild(script);
-  
-  
+  // Set the src attribute to the provided URL
+  script.src = "https://website-widgets.pages.dev/dist/sienna.min.js";
+
+  // Set the defer attribute (optional but useful for scripts that load after HTML parsing)
+  script.defer = true;
+
+  // Append the script to the document head
+  document.head.appendChild(script);
 })();

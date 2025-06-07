@@ -6,3 +6,5 @@ form/
 
 # Ignore all .php files
 *.php
+
+.DS_Store
